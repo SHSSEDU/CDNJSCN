@@ -7,6 +7,9 @@
     <link rel="shortcut icon" type="image/x-icon"
         href="https://jsd.onmicrosoft.cn/gh/SHSSEDU/LOGO@main/LOGO-removebg.png">
     <title>CDNJSCN - UNPKG</title>
+    <meta name="description" content="简单 快速 可靠. CDNJSCN 是一项免费开源 CDN (国内)搜索服务,我们的服务可以使您可以更快、更轻松地在网站上加载库文件。">
+    <meta name="keywords"
+        content="cdn, cdnjs, js, javascript, css, library, web, front-end, free, open-source, open source, oss, npm, github">
     <link rel='stylesheet' href='https://jsd.onmicrosoft.cn/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css'>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.loli.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -103,35 +106,35 @@
         </div>
 
 
-            <script>
-                function convertLink() {
-                    var UNPKGLink = document.getElementById("UNPKGLink").value;
-                    var jsdelivrLink = document.getElementById("jsdelivrLink");
-                    var accelerator = getSelectedAccelerator();
-                  
-                    // 替换链接
-                    var acceleratedLink = UNPKGLink.replace("https://unpkg.com/", accelerator);
-                  
-                    // 更新jsDelivr链接输入框的值
-                    jsdelivrLink.value = acceleratedLink;
-                  }
-                  
-                  function getSelectedAccelerator() {
-                    var officialRadio = document.getElementById("official");
-                    var onmicrosoftRadio = document.getElementById("onmicrosoft");
-                    var chuqisRadio = document.getElementById("chuqis");
-                  
-                    if (officialRadio.checked) {
-                      return "https://cdn.jsdelivr.net/npm/";
-                    } else if (onmicrosoftRadio.checked) {
-                      return "https://jsd.onmicrosoft.cn/npm/";
-                    } else if (chuqisRadio.checked) {
-                      return "https://cdn.chuqis.com/npm/";
-                    }
-                  }
-                  
-                  
-            </script>
+        <script>
+            function convertLink() {
+                var UNPKGLink = document.getElementById("UNPKGLink").value;
+                var jsdelivrLink = document.getElementById("jsdelivrLink");
+                var accelerator = getSelectedAccelerator();
+
+                // 替换链接
+                var acceleratedLink = UNPKGLink.replace("https://unpkg.com/", accelerator);
+
+                // 更新jsDelivr链接输入框的值
+                jsdelivrLink.value = acceleratedLink;
+            }
+
+            function getSelectedAccelerator() {
+                var officialRadio = document.getElementById("official");
+                var onmicrosoftRadio = document.getElementById("onmicrosoft");
+                var chuqisRadio = document.getElementById("chuqis");
+
+                if (officialRadio.checked) {
+                    return "https://cdn.jsdelivr.net/npm/";
+                } else if (onmicrosoftRadio.checked) {
+                    return "https://jsd.onmicrosoft.cn/npm/";
+                } else if (chuqisRadio.checked) {
+                    return "https://cdn.chuqis.com/npm/";
+                }
+            }
+
+
+        </script>
 
 
 
@@ -139,9 +142,9 @@
 
 
 
-            <!-- partial -->
-            <script src='https://cdnjs.loli.net/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-            <script src='https://jsd.onmicrosoft.cn/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js'></script>
+        <!-- partial -->
+        <script src='https://cdnjs.loli.net/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+        <script src='https://jsd.onmicrosoft.cn/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js'></script>
 
 
 </body>
