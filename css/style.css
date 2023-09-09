@@ -6,7 +6,7 @@ body {
   min-height: 100vh;
   padding: 0;
   background-attachment: scroll;
-  background-image: url(bg.svg);
+  background-image: url(../img/bg.svg);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;

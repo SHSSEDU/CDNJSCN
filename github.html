@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://jsd.onmicrosoft.cn/gh/SHSSEDU/LOGO@main/LOGO-removebg.png">
+    <title>CDNJSCN - 排名第一的免费开源 CDN，旨在让开发人员的生活更轻松</title>
+    <link rel='stylesheet' href='https://jsd.onmicrosoft.cn/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.loli.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .box {
+            max-width: 1014px;
+            background: #fff;
+            box-shadow: 0 4px 4px rgba(23, 35, 59, .06), 0 0 1px 1px rgba(23, 35, 59, .11), 0 10px 22px -2px rgba(23, 35, 59, .08);
+            border-radius: 8px;
+            border: none;
+            position: relative;
+            padding: 24px 24px 24px 48px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .box label {
+            color: #343535;
+        }
+
+        .input {
+            height: 48px;
+            padding: 0 16px;
+            font-size: 12px;
+            line-height: 16px;
+            background: #fff;
+            border: 1px solid #cfd6dd;
+            box-sizing: border-box;
+            border-radius: 6px;
+            transition: border .4s;
+            width: 100%;
+            display: block;
+            outline: 0;
+        }
+
+        h1.ti {
+            margin: 0 0 16px;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 44px;
+            letter-spacing: .2px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <nav class="navbar navbar-light" style="background: #343535;">
+        <a class="navbar-brand" href="/"> <img alt="Brand" height="40" src="img/logo.svg"></a>
+
+        <nav class="my-2 my-md-0 mr-md-3">
+            <li class="nav-item dropdown" style="list-style: none;display:inline-block">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false"
+                    style="text-decoration: none;color:aliceblue">
+                    加速
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Github</a>
+                </div>
+            </li>
+            <a class="p-2 text-light" onclick="alert('CDNJSCN 是一项免费开源 CDN (国内)搜索服务');" href="javascript:void(0);">关于</a>
+            <a class="p-2 text-light" href="https://github.com/SHSSEDU/CDNJSCN">Github</a>
+            <a class="p-2 text-light" href="https://shssedu.ac.cn">SHSSEDU</a>
+            <a class="p-2 text-light" href="#">状态</a>
+        </nav>
+
+    </nav>
+    <div class="container">
+
+
+        <h1 class="ti">GitHub链接转换为jsDelivr加速链接</h1>
+        <div class="box">
+            <label for="githubLink">GitHub链接:</label>
+            <input type="text" id="githubLink" placeholder="输入GitHub链接" class="input" oninput="convertLink()" />
+            <br />
+            <label for="jsdelivrLink">jsDelivr链接:</label>
+            <input type="text" id="jsdelivrLink" placeholder="jsDelivr链接" readonly class="input" />
+            <br />
+            <label for="accelerator">选择加速链接:</label>
+            <br />
+            <input type="radio" id="official" name="accelerator" value="https://cdn.jsdelivr.net/gh/" checked />
+            <label for="official">官方 - https://cdn.jsdelivr.net/gh/</label>
+            <br />
+            <input type="radio" id="onmicrosoft" name="accelerator" value="https://jsd.onmicrosoft.cn/gh/" />
+            <label for="onmicrosoft">https://jsd.onmicrosoft.cn/gh/</label>
+            <br />
+            <input type="radio" id="chuqis" name="accelerator" value="https://cdn.chuqis.com/gh/" />
+            <label for="chuqis">https://cdn.chuqis.com/gh/</label>
+        </div>
+
+        <script>
+            function convertLink() {
+                var githubLink = document.getElementById("githubLink").value;
+                var accelerator = document.querySelector('input[name="accelerator"]:checked').value;
+                var jsdelivrLink = githubLink.replace("https://github.com/", accelerator).replace("/blob/", "@");
+                document.getElementById("jsdelivrLink").value = jsdelivrLink;
+            }
+        </script>
+
+
+
+
+
+
+
+        <!-- partial -->
+        <script src='https://cdnjs.loli.net/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+        <script src='https://jsd.onmicrosoft.cn/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js'></script>
+
+
+</body>
+
+</html>
