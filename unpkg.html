@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon"
         href="https://jsd.onmicrosoft.cn/gh/SHSSEDU/LOGO@main/LOGO-removebg.png">
-    <title>CDNJSCN - Github加速</title>
+    <title>CDNJSCN - UNPKG</title>
     <link rel='stylesheet' href='https://jsd.onmicrosoft.cn/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css'>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.loli.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -65,9 +65,9 @@
                     加速
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Github</a>
+                    <a class="dropdown-item" href="github.html">Github</a>
                     <a class="dropdown-item" href="google.html">Google</a>
-                    <a class="dropdown-item" href="unpkg.html">UNPKG</a>
+                    <a class="dropdown-item" href="#">UNPKG</a>
                 </div>
             </li>
             <a class="p-2 text-light" onclick="alert('CDNJSCN 是一项免费开源 CDN (国内)搜索服务');" href="javascript:void(0);">关于</a>
@@ -80,34 +80,56 @@
     <div class="container">
 
 
-        <h1 class="ti">GitHub链接转换为jsDelivr加速链接</h1>
+        <h1 class="ti">UNPKG链接转换为加速链接</h1>
         <div class="box">
-            <label for="githubLink">GitHub链接:</label>
-            <input type="text" id="githubLink" placeholder="输入GitHub链接" class="input" oninput="convertLink()" />
+            <label for="UNPKGLink">UNPKG链接:</label>
+            <input type="text" id="UNPKGLink" placeholder="输入UNPKG链接" class="input" oninput="convertLink()" />
             <br />
             <label for="jsdelivrLink">加速链接:</label>
             <input type="text" id="jsdelivrLink" placeholder="jsDelivr链接" readonly class="input" />
             <br />
             <label for="accelerator">选择加速链接:</label>
             <br />
-            <input type="radio" id="official" name="accelerator" value="https://cdn.jsdelivr.net/gh/" checked />
-            <label for="official">官方 - https://cdn.jsdelivr.net/gh/</label>
+            <input type="radio" id="official" name="accelerator" value="https://cdn.jsdelivr.net/npm/" checked />
+            <label for="official">官方 - https://cdn.jsdelivr.net/npm/</label>
             <br />
-            <input type="radio" id="onmicrosoft" name="accelerator" value="https://jsd.onmicrosoft.cn/gh/" />
-            <label for="onmicrosoft">https://jsd.onmicrosoft.cn/gh/</label>
+            <input type="radio" id="onmicrosoft" name="accelerator" value="https://jsd.onmicrosoft.cn/npm/" />
+            <label for="onmicrosoft">https://jsd.onmicrosoft.cn/npm/</label>
             <br />
-            <input type="radio" id="chuqis" name="accelerator" value="https://cdn.chuqis.com/gh/" />
-            <label for="chuqis">https://cdn.chuqis.com/gh/</label>
+            <input type="radio" id="chuqis" name="accelerator" value="https://cdn.chuqis.com/npm/" />
+            <label for="chuqis">https://cdn.chuqis.com/npm/</label>
         </div>
 
-        <script>
-            function convertLink() {
-                var githubLink = document.getElementById("githubLink").value;
-                var accelerator = document.querySelector('input[name="accelerator"]:checked').value;
-                var jsdelivrLink = githubLink.replace("https://github.com/", accelerator).replace("/blob/", "@");
-                document.getElementById("jsdelivrLink").value = jsdelivrLink;
-            }
-        </script>
+
+            <script>
+                function convertLink() {
+                    var UNPKGLink = document.getElementById("UNPKGLink").value;
+                    var jsdelivrLink = document.getElementById("jsdelivrLink");
+                    var accelerator = getSelectedAccelerator();
+                  
+                    // 替换链接
+                    var acceleratedLink = UNPKGLink.replace("https://unpkg.com/", accelerator);
+                  
+                    // 更新jsDelivr链接输入框的值
+                    jsdelivrLink.value = acceleratedLink;
+                  }
+                  
+                  function getSelectedAccelerator() {
+                    var officialRadio = document.getElementById("official");
+                    var onmicrosoftRadio = document.getElementById("onmicrosoft");
+                    var chuqisRadio = document.getElementById("chuqis");
+                  
+                    if (officialRadio.checked) {
+                      return "https://cdn.jsdelivr.net/npm/";
+                    } else if (onmicrosoftRadio.checked) {
+                      return "https://jsd.onmicrosoft.cn/npm/";
+                    } else if (chuqisRadio.checked) {
+                      return "https://cdn.chuqis.com/npm/";
+                    }
+                  }
+                  
+                  
+            </script>
 
 
 
@@ -115,9 +137,9 @@
 
 
 
-        <!-- partial -->
-        <script src='https://cdnjs.loli.net/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-        <script src='https://jsd.onmicrosoft.cn/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js'></script>
+            <!-- partial -->
+            <script src='https://cdnjs.loli.net/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+            <script src='https://jsd.onmicrosoft.cn/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js'></script>
 
 
 </body>
