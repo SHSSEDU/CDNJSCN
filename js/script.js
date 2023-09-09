@@ -57,7 +57,7 @@ function searchCDN(sQuery) {
         }
         html += '<br>版本: <strong>' + version + '</strong>';
         if (homepage !== null)
-          html += '<br><strong><a target="_blank" href="' + homepage + '">' + name + ' Home page</a></strong>';
+          html += '<br><strong><a target="_blank" href="' + homepage + '">' + name + ' 主页</a></strong>';
         else
           html += '<br><strong><a target="_blank" href="https://www.google.com/search?q=' + name + '+' + cssjs(latest, "extOnly") + '">Search: ' + name + '</a></strong>';
         html += "</li>";
