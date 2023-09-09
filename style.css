@@ -1,0 +1,140 @@
+body {
+  background-color: #454647;
+  color: #ebebeb;
+  height: 100vh;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+  background-attachment: scroll;
+  background-image: url(https://cdnjs.com/_/6da6dfe9adcee0de10efcad20d5b33d7.svg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+#results li {
+  position: relative;
+  border-bottom: solid 1px #f2f2f2;
+  padding: 3px;
+}
+
+strong {
+  text-transform: capitalize;
+}
+
+.label.pull-right {
+  margin-top: 12px;
+}
+
+.label-info {
+  background-color: #5bc0de;
+  position: absolute;
+  left: -36px;
+  top: 6px;
+  line-height: 14px;
+  text-align: center;
+  padding: 3px;
+}
+
+.label-warning {
+  background-color: #f0ad4e;
+  position: absolute;
+  left: -28px;
+  top: 6px;
+  line-height: 14px;
+  text-align: center;
+  padding: 3px;
+}
+
+.cssjsfile {
+  font-weight: 600;
+  background: #c08570;
+  color: #242525;
+  padding: 2px;
+  overflow-wrap: anywhere;
+}
+.cssjsfile2 {
+  margin-top: 5px;
+  font-weight: 600;
+  background:#00aa6e;
+  color: #ffffff;
+  padding: 2px;
+  overflow-wrap: anywhere;
+}
+
+ul#results {
+  padding-inline-start: 36px;
+}
+
+
+input {
+  background: #ebebeb;
+  border: 0;
+  border-radius: 4.5px;
+  color: #454647;
+  font-size: 18px;
+  height: 48px;
+  padding: 8px 52px 8px 16px;
+}
+
+.filter button {
+  border: 0 solid rgba(60, 60, 60, .26);
+  border-radius: 4.5px;
+  appearance: none;
+  display: flex;
+  padding: 0 0 4px;
+  background: none;
+  border: 0 solid rgba(60, 60, 60, .26);
+  border-radius: 4.5px;
+  white-space: normal;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  color: #343535;
+  font-size: 20px;
+}
+.container .search {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-size: 16px;
+  padding: 13px 30px;
+  border-radius: 0;
+  height: auto;
+  text-align: left;
+  border-color: #c1c1c1;
+  width:90%
+}
+button.btn-outline-success{
+  box-shadow: none;
+  font-size: 16px;
+  padding: 13px 30px;
+  border-radius: 0;
+  height: auto;
+}
+@media screen and (max-width: 750px) {
+  .container .search {
+    width:100%
+  }
+  button.btn-outline-success{
+    width: 100%;
+  }
+}
+.kouhao h1 {
+  font-family: "Ubuntu",sans-serif;
+  font-weight: 400;
+  color: #ebebeb;
+  font-size: 48px;
+  letter-spacing: .41px;
+  margin: 0 0 32px;
+}
+.kouhao h2 {
+  font-family: "Ubuntu",sans-serif;
+  font-weight: 300;
+  color: #ebebeb;
+  font-size: 24px;
+  letter-spacing: .2px;
+  margin: 0 0 80px;
+}
