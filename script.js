@@ -55,7 +55,7 @@ function searchCDN(sQuery) {
           // 处理 latest 为 null 的情况
           console.log(latest)
         }
-        html += '<br>Version: <strong>' + version + '</strong>';
+        html += '<br>版本: <strong>' + version + '</strong>';
         if (homepage !== null)
           html += '<br><strong><a target="_blank" href="' + homepage + '">' + name + ' Home page</a></strong>';
         else
@@ -67,7 +67,7 @@ function searchCDN(sQuery) {
 
     },
     error: function (result) {
-      alert("Sorry no data found.");
+      alert("对不起，没有找到相关内容哦.");
     }
   });
 
