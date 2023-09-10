@@ -14,7 +14,7 @@
     <!-- Bootstrap JS -->
     <script src="https://jsd.onmicrosoft.cn/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"
         type="text/javascript"></script>
-    <script src="https://jsd.onmicrosoft.cn/npm/vue@3"></script>
+        <script src="https://jsd.onmicrosoft.cn/npm/vue@3"></script>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
             <tbody>
                 <tr v-for="(status, website) in websites">
                     <td>{{ website }}</td>
-                    <td class="badge badge-success">{{ status }}</td>
+                    <td class="badge" :class="{'badge-success': status === 'Online', 'badge-danger': status !== 'Online'}">{{ status }}</td>
                 </tr>
             </tbody>
         </table>
