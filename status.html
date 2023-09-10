@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CDNJSCN Status</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon"
+    href="https://jsd.onmicrosoft.cn/gh/SHSSEDU/LOGO@main/LOGO-removebg.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://jsd.onmicrosoft.cn/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"
+        type="text/javascript"></script>
+    <script src="https://jsd.onmicrosoft.cn/npm/vue@3"></script>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <h1 class="mt-5">CDNJSCN Status</h1>
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">服务</th>
+                    <th scope="col">状态</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(status, website) in websites">
+                    <td>{{ website }}</td>
+                    <td class="badge badge-success">{{ status }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- <script src="status.js"></script> -->
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    websites: {}
+                }
+            },
+            created() {
+                const urls = ['https://cdnjs.cloudflare.com', 'https://cdnjs.loli.net', 'https://cdn.staticfile.org', 'https://cdn.jsdelivr.net', 'https://jsd.onmicrosoft.cn', 'https://cdn.chuqis.com', 'https://fonts.loli.net', 'https://ajax.loli.net','https://cdnjs.onmicrosoft.cn','https://npm.onmicrosoft.cn'];
+                urls.forEach(url => {
+                    fetch('https://cors.quickso.cn/' + url)
+                        .then(response => {
+                            if (response.ok) {
+                                this.websites[url] = 'Online';
+                            } else {
+                                this.websites[url] = 'Offline';
+                            }
+                        })
+                        .catch(error => {
+                            this.websites[url] = 'Error';
+                        });
+                });
+            }
+        }).mount('#app');
+    </script>
+
+</body>
+
+</html>
