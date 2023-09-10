@@ -50,7 +50,9 @@ function searchCDN(sQuery) {
         html += '<span class="cssjsfile">' + latest + '</span>';
         if (latest !== null) {
           var replaced = latest.replace('cdnjs.cloudflare.com', 'cdnjs.loli.net');
-          html += "<span class='cssjsfile2' style='display: block;'>国内加速：" + replaced + '</span>';
+          html += "<span class='cssjsfile2' style='display: block;'>国内加速1：" + replaced + '</span>';
+          var replaced2 = latest.replace('cdnjs.cloudflare.com/ajax/libs', 'cdn.staticfile.org');
+          html += "<span class='cssjsfile2' style='display: block;'>国内加速2：" + replaced2 + '</span>';
         } else {
           // 处理 latest 为 null 的情况
           console.log(latest)
