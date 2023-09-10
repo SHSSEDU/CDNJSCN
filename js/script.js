@@ -53,6 +53,8 @@ function searchCDN(sQuery) {
           html += "<span class='cssjsfile2' style='display: block;'>国内加速1：" + replaced + '</span>';
           var replaced2 = latest.replace('cdnjs.cloudflare.com/ajax/libs', 'cdn.staticfile.org');
           html += "<span class='cssjsfile2' style='display: block;'>国内加速2：" + replaced2 + '</span>';
+          var replaced3 = latest.replace('cdnjs.cloudflare.com', 'cdnjs.onmicrosoft.cn');
+          html += "<span class='cssjsfile2' style='display: block;'>国内加速3：" + replaced3 + '</span>';
         } else {
           // 处理 latest 为 null 的情况
           console.log(latest)
